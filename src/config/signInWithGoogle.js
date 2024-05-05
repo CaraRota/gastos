@@ -1,6 +1,6 @@
+import { auth } from "./firebaseConfig";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import axios from "axios";
-import { auth } from "./firebaseConfig";
 
 export const signInWithGoogle = async () => {
     try {
@@ -14,5 +14,6 @@ export const signInWithGoogle = async () => {
         return data;
     } catch (error) {
         console.error(error);
+        throw new Error("Error al iniciar sesion con Google");
     }
 };

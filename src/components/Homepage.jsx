@@ -1,12 +1,11 @@
 import React from "react";
-import Login from "./login/Login";
+import Hero from "./Hero";
 
 const Homepage = () => {
-    
     return (
-        <div>
-            <Login />
-        </div>
+        <main>
+            <Hero />
+        </main>
     );
 };
 

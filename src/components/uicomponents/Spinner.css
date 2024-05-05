@@ -1,7 +1,7 @@
 .loader {
     width: 40px;
     aspect-ratio: 1;
-    color: #f03355;
+    color: #59a6a8;
     position: relative;
     background: radial-gradient(10px, currentColor 94%, #0000);
 }

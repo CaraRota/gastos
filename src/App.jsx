@@ -1,11 +1,22 @@
 import React from "react";
 import Homepage from "./components/Homepage";
+import Navbar from "./components/navbar/Navbar";
+import Login from "./components/login/Login";
+
+import { ToastContainer, cssTransition } from "react-toastify";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import "animate.css";
-import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const bounce = cssTransition({
+    enter: "animate__animated animate__bounceIn",
+    exit: "animate__animated animate__bounceOut",
+});
 
 const App = () => {
     return (
-        <>
+        <Router>
             <ToastContainer
                 position='top-right'
                 autoClose={5000}
@@ -17,10 +28,16 @@ const App = () => {
                 draggable
                 pauseOnHover
                 theme='dark'
-                transition:Bounce
+                transition={bounce}
             />
-            <Homepage />
-        </>
+            <Navbar />
+            <main className='h-screen py-16 bg-gradient-to-br from-oracle-50 to-oracle-200'>
+                <Routes>
+                    <Route path='/' element={<Homepage />} />
+                    <Route path='/login' element={<Login />} />
+                </Routes>
+            </main>
+        </Router>
     );
 };
 
