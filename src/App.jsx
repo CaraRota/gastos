@@ -30,8 +30,8 @@ const App = () => {
                 theme='dark'
                 transition={bounce}
             />
-            <main className='py-16 bg-gradient-to-br from-oracle-50 to-oracle-200 min-h-screen'>
             <Navbar />
+            <main className='flex items-center justify-center py-16 bg-gradient-to-br from-oracle-50 to-oracle-200 min-h-screen'>
                 <Routes>
                     <Route path='/' element={<Homepage />} />
                     <Route path='/login' element={<Login />} />

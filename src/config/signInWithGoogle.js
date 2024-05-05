@@ -1,19 +1,24 @@
 import { auth } from "./firebaseConfig";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import axios from "axios";
 
 export const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
     try {
-        const provider = new GoogleAuthProvider();
-        const res = await signInWithPopup(auth, provider);
-        const idToken = await res.user.getIdToken();
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/auth/google`, {
-            idToken,
-        });
-        console.log(data);
-        return data;
+        const result = await signInWithPopup(auth, provider);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        console.log("this is the result", result);
+
+        // The signed-in user info.
+        const user = result.user;
+        console.log(user);
     } catch (error) {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = error.credential;
         console.error(error);
-        throw new Error("Error al iniciar sesion con Google");
     }
 };

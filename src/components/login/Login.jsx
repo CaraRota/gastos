@@ -21,23 +21,23 @@ const Login = () => {
 
     return (
         <>
-            {isLoading ? (
-                <div className='flex justify-center items-center h-screen'>
-                    <Spinner />
-                </div>
-            ) : (
-                <div className='relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40'>
-                    <div className='m-auto max-w-lg'>
-                        <div className='rounded-xl bg-white shadow-xl'>
-                            <div className='p-6 sm:p-16'>
-                                <div className='space-y-4 flex items-center gap-8'>
-                                    <img className='size-20' src='/favicon.svg' alt='App logo' />
-                                    <h2 className='mb-8 text-2xl text-oracle-900 font-bold'>
-                                        Inicia sesion para
-                                        <br /> comenzar tu trayecto.
-                                    </h2>
-                                </div>
-                                <div className='mt-16 grid space-y-4'>
+            <div className='relative container m-auto px-6 text-oracle-500 md:px-12 xl:px-40'>
+                <div className='m-auto max-w-lg'>
+                    <div className='rounded-xl bg-white shadow-xl'>
+                        <div className='p-6 sm:p-16'>
+                            <div className='space-y-4 flex items-center gap-8'>
+                                <img className='size-20' src='/favicon.svg' alt='App logo' />
+                                <h2 className='mb-8 text-2xl text-oracle-900 font-bold'>
+                                    Inicia sesion para
+                                    <br /> comenzar tu trayecto.
+                                </h2>
+                            </div>
+                            <div className='mt-16 grid space-y-4'>
+                                {isLoading ? (
+                                    <div className='flex justify-center items-center'>
+                                        <Spinner />
+                                    </div>
+                                ) : (
                                     <button
                                         onClick={handleSignInWithGoogle}
                                         className='group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 hover:border-oracle-400 focus:bg-oracle-50 active:bg-oracle-100'>
@@ -52,12 +52,12 @@ const Login = () => {
                                             </span>
                                         </div>
                                     </button>
-                                </div>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
-            )}
+            </div>
         </>
     );
 };
