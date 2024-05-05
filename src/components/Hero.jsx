@@ -3,7 +3,7 @@ import HeroImage from "./uicomponents/icons/HeroImage";
 
 const Hero = () => {
     return (
-        <section className='flex items-center justify-center flex-wrap font-sans px-4 mx-auto w-full lg:max-w-screen-lg sm:max-w-screen-sm md:max-w-screen-md pb-20'>
+        <section className='flex items-center justify-center flex-wrap font-sans px-4 mx-auto w-full lg:max-w-screen-lg sm:max-w-screen-sm md:max-w-screen-md'>
             <div className='px-3 w-full lg:w-2/5'>
                 <div className='mx-auto mb-8 max-w-lg text-center lg:mx-0 lg:max-w-md lg:text-left text-oracle-950'>
                     <h2 className='mb-4 text-3xl font-bold text-left lg:text-5xl'>
@@ -29,8 +29,7 @@ const Hero = () => {
                     </a>
                 </div>
             </div>
-
-            <div className='px-3 mb-12 w-full lg:mb-0 lg:w-3/5'>
+            <div className='px-3 mt-12 w-full lg:mb-0 lg:w-3/5'>
                 <div className='flex justify-center items-center'>
                     <HeroImage className='block max-w-full h-auto align-middle lg:max-w-lg text-oracle-500' />
                 </div>

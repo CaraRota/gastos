@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <header className='container'>
+        <header className='mb-5'>
             <nav className='flex justify-between py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10 fixed top-0 left-0 right-0 z-10'>
                 <div className='flex items-center'>
                     <Link to={"/"} className='cursor-pointer'>
